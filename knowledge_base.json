@@ -1,0 +1,152 @@
+{
+  "questions": [
+    {
+      "question": "halo",
+      "answer": "hi how are u"
+    },
+    {
+      "question": "how are u",
+      "answer": "i am fine thanks"
+    },
+    {
+      "question": "What is machine learning?",
+      "answer": "Machine learning is a subset of artificial intelligence that focuses on the development of algorithms that allow computers to learn from and make predictions based on data."
+    },
+    {
+      "question": "hi",
+      "answer": "hi how are u"
+    },
+    {
+      "question": "thanks i am fine",
+      "answer": "you are welcome"
+    },
+    {
+      "question": "thanks",
+      "answer": " you are welcome"
+    },
+    {
+      "question": "how can i find your source code",
+      "answer": "there is here gmail my maker asaad.work2010@gmail.com"
+    },
+    {
+      "question": "What is AI?",
+      "answer": "AI, or artificial intelligence, is the simulation of human intelligence in machines that are programmed to think and learn."
+    },
+    {
+      "question": "mobadra",
+      "answer": "mister omar"
+    },
+    {
+      "question": "what is phone",
+      "answer": "sorry please enter it like this '(name ?) what is it'"
+    },
+    {
+      "question": "i am hangry",
+      "answer": "in this website you can find good recipies https://www.cookfood.net/"
+    },
+    {
+      "question": "is valorant in plastasion 5",
+      "answer": "yes for more information visit this website https://www.playstation.com/en-us/games/valorant/"
+    },
+    {
+      "question": "phone",
+      "answer": "it is a portable electronic device used for communication through voice calls, text messages, and internet access."
+    },
+    {
+      "question": "error",
+      "answer": "it is a deviation from accuracy or correctness; a mistake, as in action or speech"
+    },
+    {
+      "question": "cook",
+      "answer": "it is an individual who follows established recipes to prepare food."
+    },
+    {
+      "question": "asaad",
+      "answer": "yes i know him who makes me"
+    },
+    {
+      "question": "help",
+      "answer": ".."
+    },
+    {
+      "question": "deep learning?",
+      "answer": "Deep learning is a subset of machine learning that uses neural networks with many layers (deep neural networks) to analyze various factors of data."
+    },
+    {
+      "question": "natural language processing?",
+      "answer": "Natural language processing (NLP) is a field of AI that gives machines the ability to read, understand, and derive meaning from human languages."
+    },
+    {
+      "question": "reinforcement learning?",
+      "answer": "Reinforcement learning is an area of machine learning where an agent learns to make decisions by taking actions in an environment to achieve maximum cumulative reward."
+    },
+    {
+      "question": "computer vision?",
+      "answer": "Computer vision is a field of AI that enables computers to interpret and make decisions based on visual data from the world, such as images or videos."
+    },
+    {
+      "question": "data science?",
+      "answer": "Data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from data."
+    },
+    {
+      "question": " Turing Test?",
+      "answer": "The Turing Test, proposed by Alan Turing, is a test of a machine's ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human."
+    },
+    {
+      "question": "neural network?",
+      "answer": "A neural network is a series of algorithms that attempts to recognize underlying relationships in a set of data through a process that mimics the way the human brain operates."
+    },
+    {
+      "question": "learning?",
+      "answer": "Supervised learning is a type of machine learning where the model is trained on labeled data, which means that each training example is paired with an output label."
+    },
+    {
+      "question": "learning?",
+      "answer": "Unsupervised learning is a type of machine learning where the model is trained on unlabeled data and must find patterns and relationships within the data."
+    },
+    {
+      "question": "dataset?",
+      "answer": "A dataset is a collection of data, usually presented in tabular form, where each column represents a particular variable and each row represents a specific record."
+    },
+    {
+      "question": "big data?",
+      "answer": "Big data refers to extremely large datasets that may be analyzed computationally to reveal patterns, trends, and associations, especially relating to human behavior and interactions."
+    },
+    {
+      "question": "algorithm?",
+      "answer": "An algorithm is a step-by-step procedure or formula for solving a problem or performing a task."
+    },
+    {
+      "question": "chatbot?",
+      "answer": "A chatbot is an AI program designed to simulate conversation with human users, especially over the internet."
+    },
+    {
+      "question": "computing?",
+      "answer": "Cloud computing is the delivery of computing services, including storage, processing, and data management, over the internet (the cloud)."
+    },
+    {
+      "question": "okay",
+      "answer": "ok"
+    },
+    {
+      "question": "I'm fine",
+      "answer": "thanks God"
+    },
+    {
+      "question": "how can i cook",
+      "answer": "try to learn from the internet"
+    },
+    {
+      "question": "I will kill safe",
+      "answer": "safe"
+    },
+    {
+      "question": "culc",
+      "answer": ""
+    },
+    {
+      "question": "addTask",
+      "answer": ""
+    }
+  ]
+}
