@@ -20,5 +20,5 @@ Epyac AI is a versatile chatbot application that interacts with users, provides 
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/asaadzx/epyac-ai.git
-   cd epyac-ai
+   git clone https://github.com/asaadzx/epyac-ter
+   cd epyac-ter
