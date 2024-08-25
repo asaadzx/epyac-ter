@@ -22,3 +22,5 @@ Epyac AI is a versatile chatbot application that interacts with users, provides 
    ```bash
    git clone https://github.com/asaadzx/epyac-ter
    cd epyac-ter
+   python epyacTer.py
+   
