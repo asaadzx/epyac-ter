@@ -51,6 +51,28 @@ def add_program(program_name: str, command: str):
     save_data('knowledge_base.json', knowledge_base)
     print(f"Program '{program_name}' added successfully.")
 
+def add_Task(question: str, answer: str):
+    """Add a new task to the knowledge base."""
+    knowledge_base = load_data('knowledge_base.json')
+    tasks = knowledge_base.get("tasks", {})
+    
+    tasks[question] = answer
+    knowledge_base["tasks"] = tasks
+    save_data('knowledge_base.json', knowledge_base)
+    print(f"Task '{question}' added successfully.")
+
+def show_tasks():
+    """Show all tasks in the knowledge base."""
+    knowledge_base = load_data('knowledge_base.json')
+    tasks = knowledge_base.get("tasks", {})
+    
+    if tasks:
+        print("Tasks:")
+        for task, answer in tasks.items():
+            print(f"- {task}: {answer}")
+    else:
+        print("No tasks found.")
+
 def culc(user_input: str):
     """Perform arithmetic calculations based on user input."""
     if user_input.lower() == 'culc':
@@ -107,6 +129,15 @@ def epyac_bot():
         if user_input.lower() == 'quit':
             print("Exiting Epyac AI. Goodbye!")
             break
+        if user_input.lower() == 'tasks':
+            show_tasks()
+            continue
+
+        if user_input.lower() == 'addtask':
+            new_question = input("Enter new task: ").strip()
+            new_answer = input("Enter answer for the new task: ").strip()
+            add_Task(new_question, new_answer)
+            continue
 
         if user_input.lower() == 'culc':
             culc(user_input)
