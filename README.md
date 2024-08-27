@@ -9,6 +9,7 @@ Epyac AI is a versatile chatbot application that interacts with users, provides 
 - **Open Programs:** Opens programs using predefined commands.
 - **Add New Programs:** Allows users to add new programs and their commands to the knowledge base.
 - **Add New Questions:** Enables users to add new questions and answers to the knowledge base.
+- **Add New Tasks and show it:** give the user ability to add tasks and show it
 
 ## Prerequisites
 
