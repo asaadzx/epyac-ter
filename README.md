@@ -28,8 +28,8 @@ Epyac AI is a versatile chatbot application that interacts with users, provides 
    python epyacTer.py
    ```
 3. **run epyac on click:**
-   ```
+```
    right click on epyac.sh file
    make permissions **Executable as Program**
    and run it 
-   ```
+```
