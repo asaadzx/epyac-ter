@@ -198,7 +198,7 @@ def epyac_bot():
 
         # Call the Ollama function and print the response
         response = run_ollama(user_input)
-        print(f"Ollama says: {response}")
+        print(f"Epyac: {response}")
 
 if __name__ == '__main__':
     epyac_bot()
