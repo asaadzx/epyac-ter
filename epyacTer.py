@@ -1,5 +1,6 @@
-import json
+import json 
 import subprocess
+import requests  # Import requests to interact with the Ollama API
 from difflib import get_close_matches
 from typing import List, Optional, Dict
 
@@ -51,7 +52,7 @@ def add_program(program_name: str, command: str):
     save_data('knowledge_base.json', knowledge_base)
     print(f"Program '{program_name}' added successfully.")
 
-def add_Task(question: str, answer: str):
+def add_task(question: str, answer: str):
     """Add a new task to the knowledge base."""
     knowledge_base = load_data('knowledge_base.json')
     tasks = knowledge_base.get("tasks", {})
@@ -107,10 +108,41 @@ def culc(user_input: str):
             if input("Type 'quit' to exit or press Enter to continue: ").strip().lower() == 'quit':
                 break
 
+def run_ollama(prompt):
+    """Send a prompt to the Ollama API and return the response."""
+    url = "http://localhost:11434/api/generate"
+    data = {
+        "model": "llama3.2:latest",  # Adjust the model if necessary
+        "prompt": prompt
+    }
+    
+    try:
+        response = requests.post(url, json=data, stream=True)  # Enable streaming
+        response.raise_for_status()  # Raise an error for bad responses (4xx or 5xx)
+
+        # Initialize a variable to accumulate the generated text
+        generated_text = ""
+
+        # Read the response in chunks
+        for line in response.iter_lines(decode_unicode=True):
+            if line:
+                try:
+                    json_line = line.strip()
+                    parsed_line = json.loads(json_line)  # Use json.loads instead of requests.json.loads
+                    generated_text += parsed_line.get("response", "")
+                except ValueError:
+                    return f"Error: Unable to decode JSON line. Raw line: {json_line}"
+
+        return generated_text if generated_text else "No response generated."
+        
+    except requests.exceptions.HTTPError as http_err:
+        return f"HTTP error occurred: {http_err}"  # Print HTTP error
+    except Exception as e:
+        return f"An error occurred: {e}"
+
 def epyac_bot():
     """Main function for the Epyac AI chatbot."""
     knowledge_base = load_data('knowledge_base.json')
-
     print("Welcome to Epyac AI! Type 'help' for commands or 'quit' to exit.")
     
     while True:
@@ -124,11 +156,14 @@ def epyac_bot():
             print('  Type "culc" to calculate the result of the arithmetic expression.')
             print('  Type "open" to open a program.')
             print('  Type "addprog" to add a new program.')
+            print('  Type "addtask" to add a new task.')
+            print('  Type "tasks" to show tasks.')
             continue
 
         if user_input.lower() == 'quit':
             print("Exiting Epyac AI. Goodbye!")
             break
+
         if user_input.lower() == 'tasks':
             show_tasks()
             continue
@@ -136,7 +171,7 @@ def epyac_bot():
         if user_input.lower() == 'addtask':
             new_question = input("Enter new task: ").strip()
             new_answer = input("Enter answer for the new task: ").strip()
-            add_Task(new_question, new_answer)
+            add_task(new_question, new_answer)
             continue
 
         if user_input.lower() == 'culc':
@@ -161,24 +196,9 @@ def epyac_bot():
             print("New question added successfully!")
             continue
 
-        best_match = find_best_match(user_input, [q["question"] for q in knowledge_base["questions"]])
-
-        if best_match:
-            answer = get_response(best_match, knowledge_base)
-            print(f'epyac: <<< {answer}')
-        else:
-            print("I don't know the answer. Would you like to add it? (yes/no)")
-            add_response = input(">>> ").strip().lower()
-            if add_response == 'yes':
-                new_answer = input("Type the answer or 'skip' to ignore: ").strip()
-                if new_answer.lower() != 'skip':
-                    knowledge_base["questions"].append({"question": user_input, "answer": new_answer})
-                    save_data('knowledge_base.json', knowledge_base)
-                    print("epyac: Thanks! I have added a new response.")
-                else:
-                    print("epyac: Response skipped.")
-            else:
-                print("epyac: Okay, let me know if you have any questions.")
+        # Call the Ollama function and print the response
+        response = run_ollama(user_input)
+        print(f"Ollama says: {response}")
 
 if __name__ == '__main__':
     epyac_bot()
