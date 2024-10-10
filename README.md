@@ -10,6 +10,7 @@ Epyac AI is a versatile chatbot application that interacts with users, provides 
 - **Add New Programs:** Allows users to add new programs and their commands to the knowledge base.
 - **Add New Questions:** Enables users to add new questions and answers to the knowledge base.
 - **Add New Tasks and show it:** give the user ability to add tasks and show it
+- **Ollama link localhost :** Link to ollama with localhost 
 
 ## Prerequisites
 
@@ -22,15 +23,6 @@ Epyac AI is a versatile chatbot application that interacts with users, provides 
 
    ```bash
    git clone https://github.com/asaadzx/epyac-ter
-   ```
-2. **run epyac:**
-   ```
    cd epyac-ter
    python epyacTer.py
-   ```
-4. **run epyac on click:**
-   ```
-   right click on epyac.sh file
-   make permissions **Executable as Program**
-   and run it 
-   ```
+   
