@@ -26,3 +26,11 @@ Epyac AI is a versatile chatbot application that interacts with users, provides 
    cd epyac-ter
    python epyacTer.py
    
+2. **Install Ollama**
+   - **using there website for any system**:https://ollama.com/
+
+4.**Install EPYAC.1**
+   ```bash
+   ollama run asaad/epyac.1
+   ```
+   https://ollama.com/asaad/epyac.1
